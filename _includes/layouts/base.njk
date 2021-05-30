@@ -13,6 +13,9 @@
 
         <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
         <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
+
+        <!-- https://bugzilla.mozilla.org/show_bug.cgi?id=1404468 -->
+        <script>/**/</script>
     </head>
     <body class="s-common s-light-theme default-layout">
         {% include "components/header.njk" %}
