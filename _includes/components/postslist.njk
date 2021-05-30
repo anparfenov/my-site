@@ -1,0 +1,38 @@
+<ol reversed style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
+    {% for post in postslist | reverse %}
+        {%if post.data.img %}
+            {% set gridClass = "l-post-grid--image" %}
+        {% else %}
+            {% set gridClass = "l-post-grid" %}
+        {% endif %}
+        <li class="c-post {{ gridClass }}">
+            <div class="l-post-grid__title">
+                <a
+                    class="c-post__link"
+                    data-text="{{post.data.title}}" href="{{ post.url | url }}"
+                >
+                    <h2 class="c-post__title">
+                        {{ post.data.title }}
+                    </h2>
+                </a>
+            </div>
+            <time class="c-post__date l-post-grid__date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+            <div class="c-post__tag-list l-post-grid__tags">
+            {% for tag in post.data.tags | filterTagList %}
+                {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+                <a href="{{ tagUrl | url }}" class="c-post__tag c-back-link">{{ tag }}</a>
+            {% endfor %}
+            </div>
+            {% if post.data.img %}
+            <figure class="c-post__figure l-post-grid__image">
+                <picture class="c-picture c-picture--br-8">
+                    <a href="{{ post.url | url }}">
+                        <img class="c-picture__image" src="{{ post.data.img }}" alt="blogpost thumbnail" />
+                    </a>
+                    <figcation class="c-picture__caption">Photo by <a href="{{post.data.imageAuthor.link}}">{{ post.data.imageAuthor.name }}</a></figcatption>
+                </picture>
+            </figure>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ol>

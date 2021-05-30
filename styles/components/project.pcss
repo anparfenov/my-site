@@ -1,0 +1,49 @@
+.c-project {
+    max-width: var(--max-project-width);
+    margin: 0 auto;
+
+    &:not(:first-of-type) {
+        margin-top: 2rem;
+    }
+
+    &__figure {
+        height: 100%;
+    }
+
+    &__link {
+        font-weight: 800;
+        font-size: var(--text-lg);
+    }
+
+    &__title {
+        display: inline-block;
+    }
+
+    &__repo {
+        padding: 0.1rem 0.2rem;
+        &--gitlab {
+            --color-back-link-background: #292961;
+            --color-back-link-text: #e24329;
+        }
+        &--github {
+        }
+    }
+
+    &__section {
+        padding-top: 0.1rem;
+    }
+
+    &__text {
+        font-weight: 800;
+        margin-left: 0.25rem;
+        padding: 0.1rem 0.2rem;
+    }
+
+    &__tech {
+        padding: 0.1rem 0.2rem;
+        &:not(:first-of-type) {
+            margin-left: 0.5rem;
+        }
+    }
+
+}

@@ -1,0 +1,31 @@
+.c-nav-list {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: -0.5rem;
+    margin-bottom: -0.5rem;
+
+    &__item {
+        margin-left: 0.5rem;
+        margin-bottom: 0.5rem;
+        &--active {
+            color: var(--color-accent);
+        }
+        &:hover {
+            color: var(--color-accent);
+        }
+    }
+
+    &__link {
+        padding: 0.2rem;
+        &--active {
+            font-family: var(--monospace);
+            cursor: default;
+            background: var(--color-text);
+            color: var(--color-text-inv);
+            &:visited {
+                background: var(--color-text);
+                color: var(--color-text-inv);
+            }
+        }
+    }
+}

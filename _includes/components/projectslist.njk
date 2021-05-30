@@ -1,0 +1,37 @@
+<ol reversed style="counter-reset: start-from {{ (projectslistCounter or projectslist.length) + 1 }}">
+    {% for project in projectslist %}
+        <li class="c-project l-project-grid">
+            {% if project.image %}
+            <figure class="c-project__figure l-project-grid__image">
+                <picture class="c-picture c-picture--br-8">
+                    <a href="{{ project.link }}">
+                        <img class="c-picture__image" src="{{ project.image }}" alt="project front-end" />
+                    </a>
+                </picture>
+            </figure>
+            {% endif %}
+            <div class="c-project__meta l-project-grid__title">
+                <a href="{{ project.link }}" class="c-project__link"><h2 class="c-project__title c-shadow-link">{{ project.title }}</h2></a>
+            </div>
+            <section class="l-project-grid__repo">
+                <h4 class="c-project__text">Repo: </h4>
+                <a class="c-project__repo c-back-link c-project__repo--{{ project.repo.name }}" href="{{ project.repo.link }}">{{ project.repo.name }}</a>
+            </section>
+            <div class="c-project__section l-project-grid__description">
+                {{ project.description | safe }}
+            </div>
+            <section class="l-project-grid__tech">
+                <h4 class="c-project__text">Tech: </h4>
+                {% for tech in project.techList %}
+                    <a
+                        href="{{ tech.link }}"
+                        target="_blank"
+                        class="c-project__tech c-project__tech--{{ tech.name }} c-back-link"
+                    >
+                        {{ tech.name }}
+                    </a>
+                {% endfor %}
+            </section>
+        </li>
+    {% endfor %}
+</ol>

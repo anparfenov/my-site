@@ -1,0 +1,96 @@
+---
+layout: layouts/base.njk
+eleventyNavigation:
+    key: cv
+    title: резюме
+    order: 4
+---
+
+<div class="c-cv">
+    {% if cv %}
+    <div class="l-flex-row">
+        <h1 class="c-cv__name">{{ cv.name }}</h1>
+        <a class="c-cv__download c-shadow-link" href="{{ "/static/cv_ru_andrey_parfenov.pdf" | url }}">
+            {% include "icons/file-download.svg" %}
+            pdf
+        </a>
+    </div>
+    <div class="c-cv__profession">{{ cv.profession }}</div>
+    <ul class="c-cv__contacts">
+        {% for contact in cv.contacts %}
+            <li class="c-cv__contact">
+                {% include "icons/" + contact.icon + ".svg" %}
+                <a class="c-shadow-link u-ml--4" href="contact.link">{{ contact.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <section class="l-cv-section">
+        <h2 class="cv__title">Навыки</h2>
+        <ul class="c-ulist">
+            {% for skill in cv.skills %}
+                <li class="c-skill">
+                    <h3>{{ skill.section }}</h3>
+                    {% if skill.list %}
+                        <ul>
+                            {% for item in skill.list %}
+                                <li>{{ item }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <div>{{ skill.text | safe }}</div>
+                    {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section class="l-cv-section">
+        <h2 class="cv__title">Опыт работы</h2>
+        <ul class="c-ulist">
+            {% for job in cv.jobs %}
+                <li class="c-job">
+                    <h3 class="c-job__title c-job__title--{{ job.class }}">{{ job.company }}</h3>
+                    <div>
+                        <time class="c-time" datetime="{{ job.start | htmlDateString }}">{{ job.start | readableDate }}</time><span>&nbsp;-&nbsp;</span>
+                        {% if job.end %}
+                            <time class="c-time" datetime="{{ job.end | htmlDateString }}">{{ job.end | readableDate }}</time>
+                        {% else %}
+                            <span>настоящее время</span>
+                        {% endif %}
+                    </div>
+                    <div class="c-job__description">
+                        {{ job.description | safe }}
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section class="l-cv-section">
+        <h2 class="cv__title">Образование</h2>
+        <ul class="c-ulist">
+            {% for edu in cv.educationlist %}
+                <li class="c-education">
+                    {% if cv.image %}
+                    <div class="c-education__image">
+                        <picture>
+                            <img src="{{ edu.image }}" alt="university" class="">
+                        </picture>
+                    </div>
+                    {% endif %}
+                    <div class="">
+                        <h3 class="c-education__title c-education__title--{{ edu.class }}">{{ edu.university }}</h3>
+                        <div class="">
+                            <time class="c-time" datetime="{{ edu.start }}">{{ edu.start | readableDate }}</time><span>&nbsp;-&nbsp;</span>
+                            <time class="c-time" datetime="{{ edu.end }}">{{ edu.end | readableDate }}</time>
+                        </div>
+                        <div>
+                            <span>{{ edu.faculty }}</span>,&nbsp;<span>{{ edu.program }}</span>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+    {% else %}
+        <div>Резюме нет :(</div>
+    {% endif %}
+</div>

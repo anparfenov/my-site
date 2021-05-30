@@ -1,0 +1,14 @@
+<header class="c-header">
+    {% if page.url !== '/' %}
+        {% include "components/path.njk" %}
+    {% else %}
+        <span class="c-header__welcome">{{ metadata.welcome }}</span>
+    {% endif %}
+    <!-- <button class="c-button c-header__button js-terminal-button"> -->
+    <!--     {% include 'icons/terminal.svg' %} -->
+    <!-- </button> -->
+    <!-- <button class="c-button c-nav-button js-nav-button"> -->
+    <!--   {% include 'icons/folder.svg' %} -->
+    <!-- </button> -->
+</header>
+

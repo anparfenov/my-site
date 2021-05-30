@@ -1,35 +1,44 @@
 {
-  "name": "eleventy-base-blog",
-  "version": "5.0.2",
-  "description": "A starter repository for a blog web site using the Eleventy static site generator.",
-  "scripts": {
-    "build": "eleventy",
-    "watch": "eleventy --watch",
-    "serve": "eleventy --serve",
-    "start": "eleventy --serve",
-    "debug": "DEBUG=* eleventy"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/11ty/eleventy-base-blog.git"
-  },
-  "author": {
-    "name": "Zach Leatherman",
-    "email": "zachleatherman@gmail.com",
-    "url": "https://zachleat.com/"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/11ty/eleventy-base-blog/issues"
-  },
-  "homepage": "https://github.com/11ty/eleventy-base-blog#readme",
-  "devDependencies": {
-    "@11ty/eleventy": "^0.12.1",
-    "@11ty/eleventy-navigation": "^0.1.6",
-    "@11ty/eleventy-plugin-rss": "^1.1.1",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
-    "luxon": "^1.26.0",
-    "markdown-it": "^12.0.4",
-    "markdown-it-anchor": "^7.1.0"
-  }
+    "name": "my-site",
+    "version": "0.0.1",
+    "description": "My personal website",
+    "scripts": {
+        "build": "npm run postcss && npm run build:eleventy",
+        "build:eleventy": "eleventy",
+        "watch": "eleventy --watch",
+        "serve": "eleventy --serve --port=3000",
+        "postcss": "postcss styles/index.pcss --o ./css/index.css",
+        "postcss:dev": "postcss styles/index.pcss --o ./css/index.css --watch",
+        "dev": "npm-run-all -p postcss serve",
+        "dev:tmux": "tmux new-window npm run serve && tmux new-window npm run postcss:dev",
+        "debug": "DEBUG=* eleventy"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/moody-person/my-site"
+    },
+    "author": {
+        "name": "Andrey Parfenov",
+        "email": "asleeppiano@outlook.com",
+        "url": "https://andreyparfenov.com"
+    },
+    "license": "MIT",
+    "homepage": "https://andreyparfenov.com",
+    "devDependencies": {
+        "@11ty/eleventy": "^0.12.1",
+        "@11ty/eleventy-navigation": "^0.1.6",
+        "@11ty/eleventy-plugin-rss": "^1.1.1",
+        "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
+        "autoprefixer": "^10.2.5",
+        "luxon": "^1.26.0",
+        "markdown-it": "^12.0.4",
+        "markdown-it-anchor": "^7.1.0",
+        "markdown-it-container": "^3.0.0",
+        "npm-run-all": "^4.1.5",
+        "postcss": "^8.2.15",
+        "postcss-cli": "^8.3.1",
+        "postcss-custom-media": "^8.0.0",
+        "postcss-import": "^14.0.2",
+        "postcss-nested": "^5.0.5"
+    }
 }
