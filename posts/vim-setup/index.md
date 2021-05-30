@@ -40,8 +40,8 @@ call plug#end()
 Plug 'ycm-core/YouCompleteMe'
 ```
 <video autoplay loop muted>
-    <source src="/static/videos/ycm.webm" type="video/webm">
-    <source src="/static/videos/ycm.mp4" type="video/mp4">
+    <source src="/static/videos/vim-setup/ycm.webm" type="video/webm">
+    <source src="/static/videos/vim-setup/ycm.mp4" type="video/mp4">
 </video>
 
 [ultisnips](https://github.com/sirver/UltiSnips) - Плагин для управления сниппетами.
@@ -52,8 +52,8 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 ```
 <video autoplay loop muted>
-    <source src="/static/videos/snippets.webm" type="video/webm">
-    <source src="/static/videos/snippets.mp4" type="video/mp4">
+    <source src="/static/videos/vim-setup/snippets.webm" type="video/webm">
+    <source src="/static/videos/vim-setup/snippets.mp4" type="video/mp4">
 </video>
 
 Это чтобы сниппет триггернулся
@@ -137,8 +137,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tomtom/tcomment_vim'
 ```
 <video autoplay loop muted>
-    <source src="/static/videos/tcomment.webm" type="video/webm">
-    <source src="/static/videos/tcomment.mp4" type="video/mp4">
+    <source src="/static/videos/vim-setup/tcomment.webm" type="video/webm">
+    <source src="/static/videos/vim-setup/tcomment.mp4" type="video/mp4">
 </video>
 
 ## Плагины для гита
@@ -146,8 +146,8 @@ Plug 'tomtom/tcomment_vim'
 [fugitive](https://github.com/tpope/vim-fugitive) - обертка над `git`. Пользуюсь им не так часто, почему-то все время тянет в консоль. Хотя этот плагин делает тоже самое что и гит в консоли.
 
 <video autoplay loop muted>
-    <source src="/static/videos/git.webm" type="video/webm">
-    <source src="/static/videos/git.mp4" type="video/mp4">
+    <source src="/static/videos/vim-setup/git.webm" type="video/webm">
+    <source src="/static/videos/vim-setup/git.mp4" type="video/mp4">
 </video>
 
 [gitgutter](https://github.com/airblade/vim-gitgutter) - Подсвечивает изменения в боковой колонке.
@@ -221,15 +221,15 @@ map <C-n> :Fern . -drawer<CR>
 Для поиска файлов поставил [fzf](https://github.com/junegunn/fzf.vim)
 
 <video autoplay loop muted>
-    <source src="/static/videos/fzf.webm" type="video/webm">
-    <source src="/static/videos/fzf.mp4" type="video/mp4">
+    <source src="/static/videos/vim-setup/fzf.webm" type="video/webm">
+    <source src="/static/videos/vim-setup/fzf.mp4" type="video/mp4">
 </video>
 
 Для поиска по словам [vim-grepper](https://github.com/mhinz/vim-grepper)
 
 <video autoplay loop muted>
-    <source src="/static/videos/grepper.webm" type="video/webm">
-    <source src="/static/videos/grepper.mp4" type="video/mp4">
+    <source src="/static/videos/vim-setup/grepper.webm" type="video/webm">
+    <source src="/static/videos/vim-setup/grepper.mp4" type="video/mp4">
 </video>
 
 Вместе с ним еще можно поставить программу для поиска. Я поставил [ag](https://github.com/ggreer/the_silver_searcher). Он быстрый. Может есть быстрее, но этого хватает.
