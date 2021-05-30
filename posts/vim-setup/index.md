@@ -105,8 +105,8 @@ Plug 'lervag/vimtex'
 есть плагин [easymotion](https://github.com/easymotion/vim-easymotion)
 
 <video autoplay loop muted>
-    <source src="/static/videos/easymotion.webm" type="video/webm">
-    <source src="/static/videos/easymotion.mp4" type="video/mp4">
+    <source src="/static/videos/vim-setup/easymotion.webm" type="video/webm">
+    <source src="/static/videos/vim-setup/easymotion.mp4" type="video/mp4">
 </video>
 (Пытался заставить работать программу для отображения нажатых клавиш на wayland, но не смог)
 
