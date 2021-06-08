@@ -15,9 +15,9 @@ eleventyNavigation:
     </div>
     {% set navPages = collections.all | eleventyNavigation %}
     {% macro renderNavListItem(entry) -%}
-    <li class="c-routes__item{% if entry.url == page.url %} c-routes__item--active{% endif %}">
+    <li role="navigation" class="c-routes__item{% if entry.url == page.url %} c-routes__item--active{% endif %}">
         {% if entry.url == page.url %}
-            <div class="c-routes__link c-routes__text" href="{{ entry.url | url }}">
+            <div class="c-routes__text" href="{{ entry.url | url }}">
                 <div class="c-zoom-word">
                     <div class="c-zoom-word__list">
                         {% for i in range(0, 6) -%}
@@ -31,7 +31,7 @@ eleventyNavigation:
                 <span class="c-zoom-word__pointer">&nbsp;&#8592; вы здесь</span>
             </div>
         {% else %}
-            <a class="c-routes__link c-routes__text" href="{{ entry.url | url }}">
+            <div class="c-routes__text">
                 <div class="c-zoom-word">
                     <div class="c-zoom-word__list">
                         {% for i in range(0, 6) -%}
@@ -40,10 +40,10 @@ eleventyNavigation:
                             </span>
                         {%- endfor %}
                     </div>
-                    <span class="c-routes__name">{{ entry.title }}</span>
+                    <a href="{{ entry.url | url }}" class="c-routes__name c-routes__link">{{ entry.title }}</a>
                 </div>
                 <span class="c-zoom-word__pointer">&nbsp;&#8592; перейти</span>
-            </a>
+            </div>
         {% endif %}
         {%- if entry.children.length -%}
         <ul class="c-routes">

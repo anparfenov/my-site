@@ -20,7 +20,7 @@ eleventyNavigation:
         {% for contact in cv.contacts %}
             <li class="c-cv__contact">
                 {% include "icons/" + contact.icon + ".svg" %}
-                <a class="c-shadow-link u-ml--4" href="contact.link">{{ contact.name }}</a>
+                <a class="c-shadow-link u-ml--4" href="{{ contact.link }}">{{ contact.name }}</a>
             </li>
         {% endfor %}
     </ul>
