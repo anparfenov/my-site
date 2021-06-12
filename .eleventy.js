@@ -45,6 +45,8 @@ module.exports = function(eleventyConfig) {
         return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
     })
 
+    eleventyConfig.addFilter("keys", obj => Object.keys(obj));
+
     // Create an array of all tags
     eleventyConfig.addCollection("tagList", function(collection) {
         let tagSet = new Set();
@@ -80,8 +82,6 @@ module.exports = function(eleventyConfig) {
         ui: false,
         ghostMode: false
     });
-
-    eleventyConfig.addFilter("keys", obj => Object.keys(obj));
 
     return {
         // Control which files Eleventy will process

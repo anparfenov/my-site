@@ -3,8 +3,9 @@
     "version": "0.0.1",
     "description": "My personal website",
     "scripts": {
-        "build": "npm run postcss && npm run build:eleventy",
+        "build": "npm run cleancss; npm run postcss && npm run build:eleventy",
         "build:eleventy": "eleventy",
+        "cleancss": "rm css/index.*.css",
         "watch": "eleventy --watch",
         "serve": "eleventy --serve --port=3000",
         "postcss": "postcss styles/index.pcss --o ./css/index.css",
@@ -38,6 +39,7 @@
         "postcss": "^8.2.15",
         "postcss-cli": "^8.3.1",
         "postcss-custom-media": "^8.0.0",
+        "postcss-hash": "^2.0.0",
         "postcss-import": "^14.0.2",
         "postcss-nested": "^5.0.5"
     }
