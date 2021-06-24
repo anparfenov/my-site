@@ -67,6 +67,8 @@ module.exports = function(eleventyConfig) {
 
     // Override Browsersync defaults (used only with --serve)
     eleventyConfig.setBrowserSyncConfig({
+        files: '*',
+        ignore: ['_site', '.gitignore', 'node_modules'],
         callbacks: {
             ready: function(err, browserSync) {
                 const content_404 = fs.readFileSync('_site/404.html');
