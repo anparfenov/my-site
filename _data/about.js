@@ -8,20 +8,20 @@ module.exports = {
             {
                 icon: "brand-github",
                 label: "github",
-                link: ""
+                link: "https://github.com/moody-person"
             },
             {
                 icon: "brand-gitlab",
                 label: "gitlab",
-                link: ""
+                link: "https://gitlab.com/asleeppiano"
             },
             {
                 text: "резюме",
-                link: ""
+                link: "/cv"
             },
             {
                 text: "dotfiles",
-                link: ""
+                link: "/static/cv_ru_andrey_parfenov.pdf"
             }
         ]
     }

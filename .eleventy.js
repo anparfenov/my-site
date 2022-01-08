@@ -4,6 +4,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const { markdownLibrary } = require("./.markdown.js");
+const CleanCSS = require('clean-css');
 
 module.exports = function(eleventyConfig) {
     // Add plugins
@@ -46,6 +47,10 @@ module.exports = function(eleventyConfig) {
     })
 
     eleventyConfig.addFilter("keys", obj => Object.keys(obj));
+
+    eleventyConfig.addFilter("cssmin", (code) => {
+        return new CleanCSS({}).minify(code);
+    })
 
     // Create an array of all tags
     eleventyConfig.addCollection("tagList", function(collection) {
