@@ -1,0 +1,53 @@
+<ol class="u-mt--16" reversed style="counter-reset: start-from {{ (projectslistCounter or projectslist.length) + 1 }}">
+    {% for project in projectslist[locale] %}
+        <li class="c-project">
+            {% if project.image %}
+                <figure class="c-project_figure l-project-grid_image">
+                    <picture class="c-picture c-picture--br-8">
+                        <a href="{{ project.link }}">
+                            <img class="c-picture_image" src="{{ project.image }}" alt="project front-end" />
+                        </a>
+                    </picture>
+                </figure>
+            {% endif %}
+            <div class="c-project_bottom l-project-grid">
+                <div class="c-project_meta l-project-grid_title">
+                    <a href="{{ project.link }}" class="c-project_link">
+                        <h2 class="c-project_title c-simple-link">{{ project.title }}</h2>
+                    </a>
+                </div>
+                <section class="l-project-grid_repo">
+                    <a
+                        class="c-project_repo c-big-link c-project_repo--{{ project.repo.name }}"
+                        href="{{ project.repo.link }}"
+                        target="_blank"
+                    >
+                        {{ project.repo.name }}
+                    </a>
+                </section>
+                <div class="c-project_section l-project-grid_description">
+                    {{ project.description | safe }}
+                </div>
+                <section class="l-project-grid_tech">
+                    {% for tech in project.techList %}
+                        {% if tech.link %}
+                            <a
+                                href="{{ tech.link }}"
+                                target="_blank"
+                                class="c-project_tech c-project_tech--{{ tech.name }} c-simple-link"
+                            >
+                                {{ tech.name }}
+                            </a>
+                        {% else %}
+                            <span
+                                class="c-project_tech c-project_tech--{{ tech.name }} c-simple-link"
+                            >
+                                {{ tech.name }}
+                            </span>
+                        {% endif %}
+                    {% endfor %}
+                </section>
+            </div>
+        </li>
+    {% endfor %}
+</ol>

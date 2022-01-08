@@ -1,0 +1,73 @@
+.s-common {
+    --text-xs: 0.7rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.5rem;
+    --text-xxl: 2rem;
+
+    --max-main-width: 70rem;
+    --max-header-width: 70rem;
+    --max-footer-width: 70rem;
+    --max-postcard-width: 45rem;
+    --max-project-width: 45rem;
+    --max-content-width: 70rem;
+
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and ( min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+        --max-main-width: 60rem;
+        --max-header-width: 60rem;
+        --max-footer-width: 60rem;
+        --max-postcard-width: 35rem;
+        --max-project-width: 35rem;
+        --max-content-width: 60rem;
+    }
+
+    --sans-serif: Raleway, Helvetica, Arial, sans-serif;
+    --monospace: 'JetBrains Mono', 'Roboto Mono', monospace;
+    --serif: serif;
+
+    --color-gray-100: hsl(0, 0%, 90%);
+    --color-gray-200: hsl(0, 0%, 85%);
+    --color-gray-300: hsl(0, 0%, 80%);
+    --color-gray-400: hsl(0, 0%, 70%);
+    --color-gray-500: hsl(0, 0%, 65%);
+    --color-gray-600: hsl(0, 0%, 60%);
+    --color-gray-700: hsl(0, 0%, 55%);
+    --color-gray-800: hsl(0, 0%, 40%);
+    --color-gray-900: hsl(0, 0%, 30%);
+
+    --color-warning: hsl(37, 79%, 60%);
+
+    --gradient-header: linear-gradient(90deg, hsl(137, 93%, 53%) 0%, rgba(26,223,139,1) 32%, rgba(50,171,185,1) 95%);
+}
+
+.s-light-theme {
+    --color-main:           hsl(0, 0%, 97%);
+    --color-main-50:        hsl(79, 1%, 98%, 0.5);
+    --color-scnd:           hsl(0, 0%, 82%);
+    --color-accent:         hsl(135, 98%, 71%);
+    --color-accent-85:      hsl(136, 64%, 47%, 0.85);
+    --color-extra:          hsl(209,100%,31%);
+    --color-extra-85:       hsl(209,100%,31%, 0.85);
+    --color-super-extra:    hsl(267,80%,31%, 1);
+    --color-border:         hsl(0, 0%, 62%);
+    --color-text:           hsl(0,0%,0%);
+    --color-text-50:        hsl(0, 0%, 0%, 0.5);
+    --color-text-inv:       hsl(100, 100%, 97%);
+    --color-error:          hsl(346,84%,61%);
+    --color-terminal-black: hsl(0, 0%, 18%);
+    --color-terminal-green: hsl(137, 93%, 53%);
+
+    --color-shadow-link: var(--color-extra);
+    --color-back-link-text: var(--color-text);
+    --color-back-link-background: var(--color-text);
+    --color-back-link-hover: var(--color-text-inv);
+}
+
+

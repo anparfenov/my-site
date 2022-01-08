@@ -1,0 +1,43 @@
+@forward "../components/link";
+@forward "../components/job";
+@forward "../components/time";
+@forward "../components/lang";
+@forward "../components/list";
+@forward "../components/education";
+
+.p-cv {
+    &_contacts {
+        display: flex;
+        align-items: center;
+        flex-flow: row wrap;
+        margin-left: -0.5rem;
+        margin-top: -0.25rem;
+    }
+    &_contact {
+        display: flex;
+        margin-left: 0.5rem;
+        margin-top: 0.25rem;
+    }
+
+    &_profession {
+        margin-bottom: 1rem;
+    }
+
+    &_download {
+        svg {
+            vertical-align: middle;
+        }
+    }
+
+    &_section {
+        margin-top: 1.5rem;
+    }
+
+    &_list {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        &--style-none {
+            list-style-type: none;
+        }
+    }
+}

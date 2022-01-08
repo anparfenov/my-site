@@ -1,0 +1,8 @@
+<h1 class="p-acrhive_title">Список статей</h1>
+
+{% set postslist = collections.posts %}
+{% if postslist | length %}
+    {% include "components/postslist.njk" %}
+{% else %}
+    <div>Я пока еще ничего не написал</div>
+{% endif %}

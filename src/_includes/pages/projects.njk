@@ -1,0 +1,7 @@
+<h1 class="p-projects_title">Проекты</h1>
+
+{% if projectslist | length %}
+    {% include "components/projectslist.njk" %}
+{% else %}
+    <div>Тут пока ничего нет :(</div>
+{% endif %}

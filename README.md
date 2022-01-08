@@ -5,5 +5,5 @@
 ## Tech stack
 
 1. [eleventy](https://www.11ty.dev/)
-2. [postcss](https://postcss.org/)
+2. [sass](https://sass-lang.com/)
 3. [nunjucks](https://mozilla.github.io/nunjucks/)

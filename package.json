@@ -1,17 +1,16 @@
 {
     "name": "my-site",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "description": "My personal website",
     "scripts": {
-        "build": "npm run cleancss; npm run postcss && npm run build:eleventy",
-        "build:eleventy": "eleventy",
-        "cleancss": "rm css/index.*.css",
-        "watch": "eleventy --watch",
-        "serve": "eleventy --serve --port=3000",
-        "postcss": "postcss styles/index.pcss --o ./css/index.css",
-        "postcss:dev": "postcss styles/index.pcss --o ./css/index.css --watch",
-        "dev": "npm-run-all -p postcss serve",
-        "dev:tmux": "tmux new-window npm run serve && tmux new-window npm run postcss:dev",
+        "clean": "rm -rf _site",
+        "hasher": "node csshash.js",
+        "build": "npm run cleancss; npm run postcss && npm run build:*",
+        "build:eleventy": "ELEVENTY_ENV=production eleventy",
+        "build:sass": "sass --watch src/assets/css/index.scss _site/assets/css/$(cat csshash)",
+        "dev": "npm-run-all clean hasher -p dev:*",
+        "dev:sass": "sass --watch src/assets/css/index.scss _site/assets/css/index.css",
+        "dev:eleventy": "ELEVENTY_ENV=development eleventy --serve --port=3000",
         "debug": "DEBUG=* eleventy"
     },
     "repository": {
@@ -30,17 +29,22 @@
         "@11ty/eleventy-navigation": "^0.1.6",
         "@11ty/eleventy-plugin-rss": "^1.1.1",
         "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
+        "@rollup/plugin-node-resolve": "^13.1.3",
         "autoprefixer": "^10.2.5",
         "luxon": "^1.26.0",
         "markdown-it": "^12.0.4",
         "markdown-it-anchor": "^7.1.0",
         "markdown-it-container": "^3.0.0",
+        "nanoid": "^3.1.30",
         "npm-run-all": "^4.1.5",
         "postcss": "^8.2.15",
         "postcss-cli": "^8.3.1",
         "postcss-custom-media": "^8.0.0",
         "postcss-hash": "^2.0.0",
         "postcss-import": "^14.0.2",
-        "postcss-nested": "^5.0.5"
+        "postcss-nested": "^5.0.5",
+        "rollup": "^2.63.0",
+        "rollup-plugin-terser": "^7.0.2",
+        "sass": "^1.46.0"
     }
 }

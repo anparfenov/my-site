@@ -57,10 +57,15 @@ module.exports = function(eleventyConfig) {
         return [...tagSet];
     });
 
-    // Copy the `img` and `css` folders to the output
-    eleventyConfig.addPassthroughCopy("img");
-    eleventyConfig.addPassthroughCopy("css");
     eleventyConfig.addPassthroughCopy("static");
+    eleventyConfig.addPassthroughCopy("./src/assets/css/prism.css");
+
+    const jsAssetsFiles = "./src/**/*.js"
+    const cssAssetsFiles = "./src/assets/css/**/*.scss"
+    const mdAssetsFiles = "./src/**/*.md"
+    eleventyConfig.addWatchTarget(jsAssetsFiles)
+    eleventyConfig.addWatchTarget(cssAssetsFiles)
+    eleventyConfig.addWatchTarget(mdAssetsFiles)
 
     // Customize Markdown library and settings:
     eleventyConfig.setLibrary("md", markdownLibrary);
@@ -92,8 +97,9 @@ module.exports = function(eleventyConfig) {
             "md",
             "njk",
             "html",
-            "liquid"
         ],
+
+        passthroughFileCopy: true,
 
         // -----------------------------------------------------------------
         // If your site deploys to a subdirectory, change `pathPrefix`.
@@ -120,10 +126,9 @@ module.exports = function(eleventyConfig) {
 
         // These are all optional (defaults are shown):
         dir: {
-            input: ".",
+            input: "src",
             includes: "_includes",
-            data: "_data",
-            output: "_site"
+            data: "../_data",
         }
     };
 };

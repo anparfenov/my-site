@@ -1,0 +1,51 @@
+<div class="p-index">
+    <div class="TODO: add utility classes">
+        <div class="c-page-banner">
+            <h1 class="c-page-banner_title">{{ metadata[locale].title }}</h1>
+            <p class="c-page-banner_para">{{ metadata[locale].description }}</p>
+        </div>
+    </div>
+    {% set navPages = collections.all | eleventyNavigation %}
+    {% macro renderNavListItem(entry) -%}
+    <li role="navigation" class="c-routes_item{% if entry.url == page.url %} c-routes_item--active{% endif %}">
+        {% if entry.url == page.url %}
+            <div class="c-routes_text" href="{{ entry.url | url }}">
+                <div class="c-zoom_word">
+                    <div class="c-zoom-word_list">
+                        {% for i in range(0, 6) -%}
+                            <span  class="c-zoom-word_text">
+                                {{ entry.title }}
+                            </span>
+                        {%- endfor %}
+                    </div>
+                    <span class="c-routes_name">{{ entry.title }}</span>
+                </div>
+                <span class="c-zoom-word_pointer">&nbsp;&#8592; {{ home[locale].youAreHere }}</span>
+            </div>
+        {% else %}
+            <div class="c-routes_text">
+                <div class="c-zoom-word">
+                    <div class="c-zoom-word_list">
+                        {% for i in range(0, 6) -%}
+                            <span  class="c-zoom-word_text">
+                                {{ entry.title }}
+                            </span>
+                        {%- endfor %}
+                    </div>
+                    <a href="{{ entry.url | url }}" class="c-routes_name c-routes_link">{{ entry.title }}</a>
+                </div>
+                <span class="c-zoom-word_pointer">&nbsp;&#8592; {{ home[locale].go  }}</span>
+            </div>
+        {% endif %}
+        {%- if entry.children.length -%}
+            <ul class="c-routes">
+                {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}
+            </ul>
+        {%- endif -%}
+    </li>
+    {%- endmacro %}
+
+    <ul class="c-routes">
+        {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
+    </ul>
+</div>

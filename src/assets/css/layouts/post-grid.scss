@@ -1,0 +1,44 @@
+.l-post-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+        "title title"
+        "date tags";
+
+    &--image {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 2fr 1fr;
+        grid-template-areas:
+            "title image"
+            "date image"
+            "tags image";
+    }
+
+    &_tags {
+        grid-area: tags;
+        align-self: flex-end;
+        justify-self: flex-end;
+    }
+
+    &--image &_tags {
+        grid-area: tags;
+        align-self: flex-end;
+    }
+
+    &_title {
+        grid-area: title;
+    }
+
+    &_date {
+        align-self: flex-end;
+        grid-area: date;
+    }
+
+    &--image &_date {
+        grid-area: date;
+    }
+
+    &_image {
+        grid-area: image;
+    }
+}

@@ -1,0 +1,106 @@
+<div class="p-cv">
+    {% if cv %}
+    <div class="u-flex u-items-center u-justify-between">
+        <h1 class="p-cv_name">{{ cv[locale].name }}</h1>
+        <a class="p-cv_download c-blue-link" href="{{ "/static/cv_ru_andrey_parfenov.pdf" | url }}">
+            {% include "icons/file-download.svg" %}
+            pdf
+        </a>
+    </div>
+    <div class="p-cv_profession">{{ cv[locale].profession }}</div>
+    <ul class="p-cv_contacts">
+        {% for contact in cv[locale].contacts %}
+            <li class="p-cv_contact">
+                {% include "icons/" + contact.icon + ".svg" %}
+                <a class="c-blue-link u-ml--4" href="{{ contact.link }}">{{ contact.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <section class="p-cv_section">
+        <h2 class="p-cv_title">{{ cv[locale].heading.skills  }}</h2>
+        <ul class="p-cv_list">
+            {% for skill in cv[locale].skills %}
+                <li class="u-mt--8">
+                    <h3>{{ skill.section }}</h3>
+                    {% if skill.list %}
+                        <ul>
+                            {% for item in skill.list %}
+                                <li>{{ item }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <ul class="u-flex u-flex-row u-flex-gap--8">
+                            {% for item in skill.tech %}
+                                <li>
+                                    <code class="{{ item.classList }}">{{ item.name }}</code>
+                                    {% if item.desc %}
+                                        <span>({{ item.desc }})</span>
+                                    {% endif %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section class="p-cv_section">
+        <h2 class="p-cv_title">{{ cv[locale].heading.jobExperience }}</h2>
+        <ul class="p-cv_list">
+            {% for job in cv[locale].jobs %}
+                <li class="u-mt--16">
+                    <h3 class="c-job_title c-job_title--{{ job.class }}">{{ job.company }}</h3>
+                    <div>
+                        <time class="c-time" datetime="{{ job.start | htmlDateString }}">
+                            {{ job.start | readableDate }}
+                        </time>
+                        <span>&nbsp;-&nbsp;</span>
+                        {% if job.end %}
+                            <time class="c-time" datetime="{{ job.end | htmlDateString }}">
+                                {{ job.end | readableDate }}
+                            </time>
+                        {% else %}
+                            <span class="c-time">{{ cv[locale].text.currentTime }}</span>
+                        {% endif %}
+                    </div>
+                    <div>
+                        <ul class="c-fancy-list">
+                            {% for item in job.description %}
+                                <li class="c-fancy-list_item">{{ item.text }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section class="p-cv_section">
+        <h2 class="cv__title">{{ cv[locale].heading.education }}</h2>
+        <ul class="p-cv_list">
+            {% for edu in cv[locale].educationlist %}
+                <li class="c-education">
+                    {% if cv.image %}
+                    <div class="c-education_image">
+                        <picture>
+                            <img src="{{ edu.image }}" alt="university" class="">
+                        </picture>
+                    </div>
+                    {% endif %}
+                    <div>
+                        <h3 class="c-education_title c-education_title--{{ edu.class }}">{{ edu.university }}</h3>
+                        <div>
+                            <time class="c-time" datetime="{{ edu.start }}">{{ edu.start | readableDate }}</time><span>&nbsp;-&nbsp;</span>
+                            <time class="c-time" datetime="{{ edu.end }}">{{ edu.end | readableDate }}</time>
+                        </div>
+                        <div>
+                            <span>{{ edu.faculty }}</span>,&nbsp;<span>{{ edu.program }}</span>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+    {% else %}
+        <div>{{ cv[locale].text.noResume }} :(</div>
+    {% endif %}
+</div>

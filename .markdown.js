@@ -3,7 +3,7 @@ const markdownItAnchor = require("markdown-it-anchor");
 // const markdownItContainer = require("markdown-it-container");
 const fs = require("fs");
 
-const linkIcon = fs.readFileSync("./_includes/icons/link.svg");
+const linkIcon = fs.readFileSync("./src/_includes/icons/link.svg");
 
 let markdownLibrary = markdownIt({
     html: true,

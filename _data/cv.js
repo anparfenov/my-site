@@ -1,90 +1,108 @@
 module.exports = {
-    "name": "Андрей Парфенов",
-    "profession": "Разработчик интерфейсов",
-    "contacts": [
-        {
-            "icon": "brand-telegram",
-            "link": "https://t.me/rawkangaroo",
-            "name": "telegram",
+    ru: {
+        name: "Андрей Парфенов",
+        profession: "Разработчик интерфейсов",
+        contacts: [
+            {
+                icon: "brand-telegram",
+                link: "https://t.me/rawkangaroo",
+                name: "telegram",
+            },
+            {
+                icon: "at",
+                link: "mailto:asleeppiano@outlook.com",
+                name: "asleeppiano@outlook.com",
+            },
+        ],
+        skills: [
+            {
+                section: "Языки программирования",
+                tech: [
+                    { name: "javascript", classList: "c-lang c-lang--js" },
+                    { name: "typescript", classList: "c-lang c-lang--ts" },
+                    { name: "html", classList: "c-lang c-lang--html" },
+                    { name: "css", classList: "c-lang c-lang--css" },
+                ],
+            },
+            {
+                section: "Фреймворки",
+                tech: [
+                    { name: "vue", classList: "c-lang c-lang--vue", desc: "использую на текущей работе" },
+                    { name: "svelte", classList: "c-lang c-lang--svelte" },
+                    { name: "react", classList: "c-lang c-lang--react" },
+                ],
+            },
+            {
+                section: "Остальное",
+                list: [
+                    "git, docker",
+                    "знаком c c, c++, java, clojure",
+                ],
+            },
+        ],
+        jobs: [
+            {
+                company: "Кошелек",
+                class: "koshelek",
+                start: new Date("2020-09-14"),
+                description: [
+                    { text: 'Разработка vue компонентов' },
+                    { text: 'Работа с ssr, микросервисной архитектурой' },
+                    { text: 'Написание юнит тестов для vue компонентов' },
+                    { text: 'Сделал новый раздел на сайте, редактор статей' },
+                ]
+            },
+            {
+                company: "Розарио",
+                class: "rozario",
+                start: new Date("2019-11-01"),
+                end: new Date("2020-07-01"),
+                description: [
+                    { text: 'Разработка компонентов на svelte' },
+                    { text: 'Написание тестов unit/e2e' },
+                    { text: 'Разработал почти все компоненты' },
+                    { text: 'Валидация форм' },
+                ],
+            },
+            {
+                company: "Фриланс",
+                class: "freelance",
+                start: new Date("2019-06-01"),
+                end: new Date("2019-11-01"),
+                description: [
+                    { text: 'разработал блог для интернет магазина (react)' },
+                    { text: 'верстка html/css, скрипты на js, react.' },
+                ],
+            },
+            {
+                company: "Севентест",
+                class: "seventest",
+                start: new Date("2017-08-01"),
+                end: new Date("2020-01-01"),
+                description: [
+                    { text: 'разрботка системы мониторинга сетей на с++' },
+                ],
+            },
+        ],
+        educationlist: [
+            {
+                university: "СПБГУТ",
+                class: "sut",
+                image: "",
+                start: new Date("2014-09-01"),
+                end: new Date("2014-06-29"),
+                faculty: "ИКСС",
+                program: "Программная инженерия",
+            },
+        ],
+        heading: {
+            skills: "Навыки",
+            "jobExperience": "Опыт работы",
+            "education": "Образование",
         },
-        {
-            "icon": "at",
-            "link": "mailto:asleeppiano@outlook.com",
-            "name": "asleeppiano@outlook.com",
-        },
-    ],
-    "skills": [
-        {
-            "section": "Языки программирования",
-            "text": `<code class="c-lang c-lang--js">javascript</code> (nodejs, browser), <code class="c-lang c-lang--html">html</code>, <code class="c-lang c-lang--css">css</code>`,
-        },
-        {
-            "section": "Фреймворки",
-            "text": `<code class="c-lang c-lang--vue">vue</code> (использую на текущей работе), <code class="c-lang c-lang--svelte">svelte</code>, <code class="c-lang c-lang--react">react</code>`,
-        },
-        {
-            "section": "Остальное",
-            "list": [
-                "git, sql, docker",
-                "c, c++, java (использовал в универе)",
-                "racket (использую для sicp)",
-            ],
-        },
-    ],
-    "jobs": [
-        {
-            "company": "Кошелек",
-            "class": "koshelek",
-            "start": new Date("2020-09-14"),
-            "description": `<ul>
-            <li>Разработка vue компонентов</li>
-            <li>Работа с ssr, микросервисной архитектурой</li>
-            <li>Написание юнит тестов для vue компонентов</li>
-            <li>Сделал новый раздел на сайте, редактор статей</li>
-            </ul>`,
-        },
-        {
-            "company": "Розарио",
-            "class": "rozario",
-            "start": new Date("2019-11-01"),
-            "end": new Date("2020-07-01"),
-            "description": `<ul>
-                <li>Разработка компонентов на svelte</li>
-                <li>Написание тестов unit/e2e</li>
-                <li>Разработал почти все компоненты</li>
-                <li>Валидация форм</li>
-            </ul>`,
-        },
-        {
-            "company": "Фриланс",
-            "class": "freelance",
-            "start": new Date("2019-06-01"),
-            "end": new Date("2019-11-01"),
-            "description": `<ul>
-                <li>разработал блог для интернет магазина (react)</li>
-                <li>верстка html/css, скрипты на js, react.</li>
-            </ul>
-            `,
-        },
-        {
-            "company": "Севентест",
-            "class": "seventest",
-            "start": new Date("2017-08-01"),
-            "end": new Date("2020-01-01"),
-            "description": `<ul>
-            <li>разрботка системы мониторинга сетей на с++</li>
-            </ul>`,
-        },
-    ],
-    "educationlist": [
-        {
-            "university": "СПБГУТ",
-            "class": "sut",
-            "image": "",
-            "start": new Date("2014-09-01"),
-            "end": new Date("2014-06-29"),
-            "faculty": "ИКСС",
-            "program": "Программная инженерия",
-        },
-    ]
-}
+        text: {
+            "currentTime": "текущее время",
+            "noResume": "Резюме нет",
+        }
+    },
+};

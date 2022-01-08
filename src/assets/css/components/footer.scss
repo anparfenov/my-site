@@ -1,0 +1,54 @@
+@use "sass:map";
+@use "../mixins";
+
+.c-footer {
+    width: 100%;
+    margin: 2rem auto 0 auto;
+    flex-grow: 0;
+    border-top: 1px solid var(--color-border);
+
+    @include mixins.content-padding();
+
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+
+    &_item:not(:first-of-type) {
+        margin-top: 0.5rem;
+        @include mixins.media("tablet") {
+            margin-top: 0rem;
+        }
+    }
+
+    &_wrapper {
+        max-width: var(--max-footer-width);
+        margin: 0 auto;
+        padding: 0.25rem 0;
+        border-radius: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        @include mixins.media("tablet") {
+            flex-direction: row;
+        }
+    }
+    &_author {
+        margin: 0 0.5rem;
+        @include mixins.media("tablet") {
+            margin: 0;
+        }
+    }
+    &_icon {
+        margin-left: 0.25rem;
+        color: var(--color-text);
+        display: flex;
+        &:visited {
+            color: var(--color-text);
+        }
+    }
+    &_source {
+        display: flex;
+        align-items: center;
+    }
+}

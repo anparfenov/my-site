@@ -1,0 +1,16 @@
+@use "sass:map";
+@use "variables";
+
+@mixin media($screen) {
+    @media (min-width: map.get(variables.$breakpoints, $screen)) {
+        @content;
+    }
+}
+
+@mixin content-padding() {
+    padding: 0 1rem;
+
+    @include media("laptop") {
+        padding: 0;
+    }
+}
