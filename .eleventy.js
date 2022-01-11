@@ -7,7 +7,6 @@ const { markdownLibrary } = require("./.markdown.js");
 const CleanCSS = require('clean-css');
 
 module.exports = function(eleventyConfig) {
-    // Add plugins
     eleventyConfig.addPlugin(pluginRss);
     eleventyConfig.addPlugin(pluginSyntaxHighlight);
     eleventyConfig.addPlugin(pluginNavigation);
@@ -15,7 +14,6 @@ module.exports = function(eleventyConfig) {
     // https://www.11ty.dev/docs/data-deep-merge/
     eleventyConfig.setDataDeepMerge(true);
 
-    // Alias `layout: post` to `layout: layouts/post.njk`
     eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
 
     eleventyConfig.addFilter("readableDate", dateObj => {
@@ -27,7 +25,6 @@ module.exports = function(eleventyConfig) {
         return DateTime.fromJSDate(dateObj, {zone: 'utc', locale: 'ru'}).toFormat('yyyy-LL-dd');
     });
 
-    // Get the first `n` elements of a collection.
     eleventyConfig.addFilter("head", (array, n) => {
         if( n < 0 ) {
             return array.slice(n);
@@ -36,13 +33,11 @@ module.exports = function(eleventyConfig) {
         return array.slice(0, n);
     });
 
-    // Return the smallest number argument
     eleventyConfig.addFilter("min", (...numbers) => {
         return Math.min.apply(null, numbers);
     });
 
     eleventyConfig.addFilter("filterTagList", tags => {
-        // should match the list in tags.njk
         return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
     })
 
@@ -52,7 +47,6 @@ module.exports = function(eleventyConfig) {
         return new CleanCSS({}).minify(code);
     })
 
-    // Create an array of all tags
     eleventyConfig.addCollection("tagList", function(collection) {
         let tagSet = new Set();
         collection.getAll().forEach(item => {
@@ -72,10 +66,8 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addWatchTarget(cssAssetsFiles)
     eleventyConfig.addWatchTarget(mdAssetsFiles)
 
-    // Customize Markdown library and settings:
     eleventyConfig.setLibrary("md", markdownLibrary);
 
-    // Override Browsersync defaults (used only with --serve)
     eleventyConfig.setBrowserSyncConfig({
         files: '*',
         ignore: ['_site', '.gitignore', 'node_modules'],
@@ -96,40 +88,17 @@ module.exports = function(eleventyConfig) {
     });
 
     return {
-        // Control which files Eleventy will process
-        // e.g.: *.md, *.njk, *.html, *.liquid
         templateFormats: [
             "md",
             "njk",
             "html",
         ],
 
-        passthroughFileCopy: true,
-
-        // -----------------------------------------------------------------
-        // If your site deploys to a subdirectory, change `pathPrefix`.
-        // Don’t worry about leading and trailing slashes, we normalize these.
-
-        // If you don’t have a subdirectory, use "" or "/" (they do the same thing)
-        // This is only used for link URLs (it does not affect your file structure)
-        // Best paired with the `url` filter: https://www.11ty.dev/docs/filters/url/
-
-        // You can also pass this in on the command line using `--pathprefix`
-
-        // Optional (default is shown)
         pathPrefix: "/",
-        // -----------------------------------------------------------------
-
-        // Pre-process *.md files with: (default: `liquid`)
         markdownTemplateEngine: "njk",
-
-        // Pre-process *.html files with: (default: `liquid`)
         htmlTemplateEngine: "njk",
-
-        // Opt-out of pre-processing global data JSON files: (default: `liquid`)
         dataTemplateEngine: false,
 
-        // These are all optional (defaults are shown):
         dir: {
             input: "src",
             includes: "_includes",
