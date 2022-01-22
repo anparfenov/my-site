@@ -53,11 +53,4 @@
         margin-left: 0.25rem;
         padding: 0.1rem 0.2rem;
     }
-
-    &_tech {
-        padding: 0.1rem 0.2rem;
-        &:not(:first-of-type) {
-            margin-left: 0.5rem;
-        }
-    }
 }

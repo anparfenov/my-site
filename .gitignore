@@ -3,6 +3,7 @@ _cache/
 node_modules/
 static/
 _data/css.json
+lib/js
 
 *.log
 csshash

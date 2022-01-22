@@ -1,9 +1,5 @@
-<ol
-    class="u-mt--16"
-    reversed
-    style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}"
->
-    {% for post in postslist | reverse %}
+<ol class="u-mt--16">
+    {% for post in postslist %}
         {%if post.data.img %}
             {% set gridClass = "l-post-grid--image" %}
         {% else %}

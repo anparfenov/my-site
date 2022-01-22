@@ -3,8 +3,9 @@ const fs = require("fs");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
-const { markdownLibrary } = require("./.markdown.js");
+const { markdownLibrary } = require("./lib/scripts/markdown.js");
 const CleanCSS = require('clean-css');
+const { getProjectsData } = require('./lib/js/projects');
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(pluginRss);
@@ -55,6 +56,12 @@ module.exports = function(eleventyConfig) {
 
         return [...tagSet];
     });
+
+    eleventyConfig.addCollection("projects", async () => {
+        const projects = await getProjectsData();
+        console.log('projects', projects);
+        return projects;
+    })
 
     eleventyConfig.addPassthroughCopy("static");
     eleventyConfig.addPassthroughCopy("./src/assets/css/prism.css");

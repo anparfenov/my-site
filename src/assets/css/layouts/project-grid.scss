@@ -1,10 +1,21 @@
+@use "../mixins";
+
 .l-project-grid {
     display: grid;
-    grid-template-columns: 4fr 3fr;
-    grid-gap: 0.2rem;
+    grid-gap: 0.25rem;
     grid-template-areas:
-        "title tech"
-        "description repo";
+        "title"
+        "description"
+        "tech"
+        "repo";
+
+    @include mixins.media('tablet') {
+        grid-template-columns: 4fr 3fr;
+        grid-gap: 0.2rem;
+        grid-template-areas:
+            "title tech"
+            "description repo";
+    }
 
 
     &_title {
@@ -13,11 +24,15 @@
 
     &_tech {
         grid-area: tech;
-        align-self: center;
         display: flex;
+        gap: 0.5rem;
         flex-flow: row wrap;
         align-items: center;
-        justify-content: flex-end;
+
+        @include mixins.media('tablet') {
+            justify-content: flex-end;
+            align-self: center;
+        }
     }
 
     &_description {
@@ -29,6 +44,10 @@
         display: flex;
         flex-flow: row wrap;
         align-items: flex-start;
-        justify-content: flex-end;
+
+        @include mixins.media('tablet') {
+            justify-content: flex-end;
+            align-self: center;
+        }
     }
 }
