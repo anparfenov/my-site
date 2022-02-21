@@ -18,7 +18,7 @@ module.exports = {
             },
             {
                 text: "dotfiles",
-                link: "/static/cv_ru_andrey_parfenov.pdf"
+                link: "https://gitea.andreyparfenov.com/person/dotfiles"
             }
         ]
     }
