@@ -52,12 +52,12 @@
                     <h3 class="c-job_title c-job_title--{{ job.class }}">{{ job.company }}</h3>
                     <div>
                         <time class="c-time" datetime="{{ job.start | htmlDateString }}">
-                            {{ job.start | readableDate }}
+                            {{ job.start | readableDateWithoutDays }}
                         </time>
                         <span>&nbsp;-&nbsp;</span>
                         {% if job.end %}
                             <time class="c-time" datetime="{{ job.end | htmlDateString }}">
-                                {{ job.end | readableDate }}
+                                {{ job.end | readableDateWithoutDays }}
                             </time>
                         {% else %}
                             <span class="c-time">{{ cv[locale].text.currentTime }}</span>
@@ -89,8 +89,8 @@
                     <div>
                         <h3 class="c-education_title c-education_title--{{ edu.class }}">{{ edu.university }}</h3>
                         <div>
-                            <time class="c-time" datetime="{{ edu.start }}">{{ edu.start | readableDate }}</time><span>&nbsp;-&nbsp;</span>
-                            <time class="c-time" datetime="{{ edu.end }}">{{ edu.end | readableDate }}</time>
+                            <time class="c-time" datetime="{{ edu.start }}">{{ edu.start | readableDateWithoutDays }}</time><span>&nbsp;-&nbsp;</span>
+                            <time class="c-time" datetime="{{ edu.end }}">{{ edu.end | readableDateWithoutDays }}</time>
                         </div>
                         <div>
                             <span>{{ edu.faculty }}</span>,&nbsp;<span>{{ edu.program }}</span>

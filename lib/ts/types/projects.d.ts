@@ -2,7 +2,7 @@ export type Project = {
     name: string;
     host: string;
     link: string;
-    image: string;
+    image?: string;
 }
 
 export type Cacheable = {
@@ -35,7 +35,7 @@ export type RepoStructure = {
     id: number;
     title: string;
     link: string;
-    image: string;
+    image?: string;
     techList: Array<Tech>;
     description: string;
     forks: number;

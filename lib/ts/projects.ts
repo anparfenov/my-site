@@ -17,6 +17,12 @@ const projectsList: PROJECTS.Project[] = [
         link: "https://moody-person.github.io/11ty-starter",
         image: "/static/images/11ty-starter/11ty-starter.png",
     },
+    {
+        name: "http-client",
+        host: "github",
+        link: "https://www.npmjs.com/package/@asleeppiano/http-client",
+        image: ''
+    },
 ];
 
 const GITHUB_API_URL = "https://api.github.com";

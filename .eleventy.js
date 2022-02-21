@@ -21,6 +21,10 @@ module.exports = function(eleventyConfig) {
         return DateTime.fromJSDate(dateObj, {zone: 'utc', locale: 'ru'}).toFormat("dd LLL yyyy");
     });
 
+    eleventyConfig.addFilter("readableDateWithoutDays", dateObj => {
+        return DateTime.fromJSDate(dateObj, {zone: 'utc', locale: 'ru'}).toFormat("LLL yyyy");
+    });
+
     // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
     eleventyConfig.addFilter('htmlDateString', (dateObj) => {
         return DateTime.fromJSDate(dateObj, {zone: 'utc', locale: 'ru'}).toFormat('yyyy-LL-dd');
