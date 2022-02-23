@@ -21,7 +21,7 @@ const projectsList: PROJECTS.Project[] = [
         name: "http-client",
         host: "github",
         link: "https://www.npmjs.com/package/@asleeppiano/http-client",
-        image: ''
+        image: '/static/images/http-client/http-client-image.png'
     },
 ];
 
