@@ -35,4 +35,4 @@ jobs:
         key: ${{ secrets.SSH2 }}
         passphrase: ${{ secrets.PASSPHRASE }}
         source: "./_site"
-        target: "/home/asleeppiano/my-site"
+        target: ${{ secrets.SITE_TARGET }}
