@@ -18,6 +18,7 @@ module.exports = {
             {
                 section: "Языки программирования",
                 tech: [
+                    { name: "php", classList: "c-lang c-lang--php" },
                     { name: "javascript", classList: "c-lang c-lang--js" },
                     { name: "typescript", classList: "c-lang c-lang--ts" },
                     { name: "html", classList: "c-lang c-lang--html" },
@@ -27,24 +28,33 @@ module.exports = {
             {
                 section: "Фреймворки",
                 tech: [
-                    { name: "vue", classList: "c-lang c-lang--vue", desc: "использую на текущей работе" },
+                    { name: "vue", classList: "c-lang c-lang--vue"},
                     { name: "svelte", classList: "c-lang c-lang--svelte" },
-                    { name: "react", classList: "c-lang c-lang--react" },
+                    { name: "react", classList: "c-lang c-lang--react", desc: "использую на текущей работе" },
                 ],
             },
             {
                 section: "Остальное",
                 list: [
                     "git, docker",
-                    "знаком c c, c++, java, clojure",
                 ],
             },
         ],
         jobs: [
             {
+                company: "ВКонтакте",
+                class: "vk",
+                start: new Date("2022-04-13"),
+                description: [
+                    { text: 'Делаю ленту и раздел друзей' },
+                    { text: 'Рендеринг на kphp и на react' },
+                ]
+            },
+            {
                 company: "Кошелек",
                 class: "koshelek",
                 start: new Date("2020-09-14"),
+                end: new Date("2020-04-04"),
                 description: [
                     { text: 'Разработка vue компонентов' },
                     { text: 'Работа с ssr, микросервисной архитектурой, webpack module federation' },

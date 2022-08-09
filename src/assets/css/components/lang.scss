@@ -4,6 +4,10 @@
     border-radius: 0.25rem;
     word-break: normal;
 
+    &--php {
+        background: #8892BF;
+        color: white;
+    }
     &--js {
         background: #f7df1e;
     }
