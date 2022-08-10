@@ -54,7 +54,7 @@ module.exports = {
                 company: "Кошелек",
                 class: "koshelek",
                 start: new Date("2020-09-14"),
-                end: new Date("2020-04-04"),
+                end: new Date("2022-04-04"),
                 description: [
                     { text: 'Разработка vue компонентов' },
                     { text: 'Работа с ssr, микросервисной архитектурой, webpack module federation' },

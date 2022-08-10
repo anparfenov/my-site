@@ -18,7 +18,7 @@ module.exports = {
             },
             {
                 text: "dotfiles",
-                link: "https://gitea.andreyparfenov.com/person/dotfiles"
+                link: "https://github.com/moody-person/dotfiles"
             }
         ]
     }
