@@ -1,0 +1,17 @@
+.index-grid {
+    display: grid;
+    grid-template-areas:
+    "meta pages";
+
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    &_meta {
+        grid-area: meta;
+    }
+
+    &_pages {
+        grid-area: pages;
+    }
+}

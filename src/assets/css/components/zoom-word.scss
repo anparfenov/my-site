@@ -20,13 +20,4 @@
         left: 0;
         transition: transform 0.5s ease;
     }
-    &_pointer {
-        color: transparent;
-        -webkit-text-stroke: 1px hsla(0, 0%, 30%);
-        visibility: collapse;
-        display: none;
-        @include mixins.media("tablet") {
-            display: inline;
-        }
-    }
 }

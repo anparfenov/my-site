@@ -60,6 +60,9 @@
             }
         }
     }
+    &_item--active {
+        pointer-events: none;
+    }
     &_name {
         visibility: visible;
         -webkit-text-stroke: 1px hsla(0, 0%, 30%);
