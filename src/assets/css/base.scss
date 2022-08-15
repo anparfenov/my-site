@@ -61,7 +61,6 @@ main {
     max-width: var(--max-main-width);
     width: 100%;
     flex: 1;
-    height: 100%;
     @include mixins.content-padding();
 }
 
