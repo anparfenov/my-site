@@ -80,6 +80,14 @@
     --color-accent-85:      hsl(61, 100%, 76%, 0.5);
     --color-extra:          hsl(241, 100%, 59%);
     --color-error:          hsl(346,84%,61%);
+    --color-border:         hsl(0, 0%, 62%);
+    --color-super-extra:    hsl(267,80%,31%, 1);
+    --color-scnd:           hsl(36deg 100% 89%);
+
+    --color-shadow-link: var(--color-extra);
+    --color-back-link-text: var(--color-text);
+    --color-back-link-background: var(--color-text);
+    --color-back-link-hover: var(--color-text-inv);
 }
 
 
