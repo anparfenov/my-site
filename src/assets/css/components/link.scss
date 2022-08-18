@@ -5,6 +5,18 @@
     }
 }
 
+.c-link {
+    color: var(--color-extra);
+    padding: 0.2rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    box-shadow: 0 1px 0 var(--color-border);
+    &:hover {
+        background-color: var(--color-gray-100-60);
+        box-shadow: 0 2px 0 var(--color-border);
+    }
+}
+
 .c-big-link {
     color: var(--color-back-link-text);
     position:relative;

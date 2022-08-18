@@ -2,7 +2,7 @@
     {% if cv %}
     <div class="u-flex u-items-center u-justify-between">
         <h1 class="p-cv_name">{{ cv[locale].name }}</h1>
-        <a class="p-cv_download c-simple-link" href="{{ "/static/cv_ru_andrey_parfenov.pdf" | url }}">
+        <a class="p-cv_download c-link" href="{{ "/static/cv_ru_andrey_parfenov.pdf" | url }}">
             {% include "icons/file-download.svg" %}
             pdf
         </a>
@@ -12,7 +12,7 @@
         {% for contact in cv[locale].contacts %}
             <li class="p-cv_contact">
                 {% include "icons/" + contact.icon + ".svg" %}
-                <a class="c-simple-link u-ml--4" href="{{ contact.link }}">{{ contact.name }}</a>
+                <a class="c-link u-ml--4" href="{{ contact.link }}">{{ contact.name }}</a>
             </li>
         {% endfor %}
     </ul>
