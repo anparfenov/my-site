@@ -56,8 +56,9 @@ function adaptGithubRepo(repo: PROJECTS.GithubRepo & PROJECTS.Project) {
         stars: repo.stargazers_count,
         link: repo.link,
         image: repo.image,
+    
         repo: {
-            link: repo.url,
+            link: repo.html_url,
             name: "github",
         },
     };
@@ -76,10 +77,6 @@ function adaptToRepoStructure(
     }
     return [];
 }
-
-// const readPreviousProjects() {
-//     fs.readFileSync()
-// }
 
 export async function fetchGithubProjects(): Promise<
     Array<PROJECTS.RepoStructure>

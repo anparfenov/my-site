@@ -1,16 +1,14 @@
 <ol class="u-mt--16"">
     {% for project in collections.projects %}
         <li class="c-project">
-            {% if project.image %}
-                <figure class="c-project_figure l-project-grid_image">
-                    <picture class="c-picture c-picture--br-8">
-                        <a target="_blank" rel="noopener" href="{{ project.link }}">
-                            <img class="c-picture_image" src="{{ project.image }}" alt="project front-end" />
-                        </a>
-                    </picture>
-                </figure>
-            {% endif %}
-            <div class="c-project_bottom l-project-grid">
+            <div class="c-picture">
+                {% if project.image %}
+                    <a href="{{ project.link }}" target="_blank">
+                        <img class="c-picture_image" src="{{ project.image }}" alt="project" />
+                    </a>
+                {% endif %}
+            </div>
+            <div class="c-project_content l-project-grid">
                 <div class="c-project_meta l-project-grid_title">
                     <a target="_blank" rel="noopener" href="{{ project.link }}" class="c-project_link">
                         <h2 class="c-project_title c-simple-link">{{ project.title }}</h2>
@@ -28,24 +26,26 @@
                 <div class="c-project_section l-project-grid_description">
                     {{ project.description | safe }}
                 </div>
-                <section class="l-project-grid_tech">
-                    {% for tech in project.techList %}
-                        {% if tech.link %}
-                            <a
-                                href="{{ tech.link }}"
-                                target="_blank"
-                                class="c-project_tech c-project_tech--{{ tech.name }} c-simple-link"
-                            >
-                                {{ tech.name }}
-                            </a>
-                        {% else %}
-                            <span
-                                class="c-project_tech c-project_tech--{{ tech.name }}"
-                            >
-                                {{ tech.name }}
-                            </span>
-                        {% endif %}
-                    {% endfor %}
+                <section class="l-project-grid_tech c-project_tech-list-section">
+                    <div class="c-project_tech-list">
+                        {% for tech in project.techList %}
+                            {% if tech.link %}
+                                <a
+                                    href="{{ tech.link }}"
+                                    target="_blank"
+                                    class="c-project_tech c-project_tech--{{ tech.name }} c-simple-link"
+                                >
+                                    {{ tech.name }}
+                                </a>
+                            {% else %}
+                                <span
+                                    class="c-project_tech c-project_tech--{{ tech.name }}"
+                                >
+                                    {{ tech.name }}
+                                </span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                 </section>
             </div>
         </li>
