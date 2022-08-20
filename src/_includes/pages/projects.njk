@@ -1,7 +1,10 @@
-<h1 class="p-projects_title">Проекты</h1>
+<div class="c-header-back">
+    <h1 class="c-header-back_item">{{ projects[locale].title }}</h1>
+    <div class="c-header-back_rect"></div>
+</div>
 
 {% if projectslist | length %}
     {% include "components/projectslist.njk" %}
 {% else %}
-    <div>Тут пока ничего нет :(</div>
+    <div>{{ projects[locale].empty }}</div>
 {% endif %}

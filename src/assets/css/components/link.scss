@@ -5,6 +5,10 @@
     }
 }
 
+.c-simple-link--inv {
+    --color-text: var(--color-text-inv);
+}
+
 .c-link {
     color: var(--color-extra);
     padding: 0.2rem;
@@ -56,6 +60,10 @@
             color: var(--color-text-inv);
         }
     }
+}
+
+.c-big-link--inv {
+    --color-back-link-text: var(--color-text-inv);
 }
 
 .c-icon-link {

@@ -4,7 +4,10 @@ templateClass: tmpl-about
 ---
 
 <div class="p-about">
-    <h1 class="p-about_title">{{ about[locale].title | capitalize }}</h1>
+    <div class="c-header-back">
+        <h1 class="c-header-back_item">{{ about[locale].title | capitalize }}</h1>
+        <div class="c-header-back_rect"></div>
+    </div>
 
     <div role="main" class="c-content">
         {{ content | safe }}

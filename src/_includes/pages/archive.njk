@@ -1,8 +1,11 @@
-<h1 class="p-acrhive_title">Список статей</h1>
+<div class="c-header-back">
+    <h1 class="c-header-back_item">{{ archive[locale].title }}</h1>
+    <div class="c-header-back_rect"></div>
+</div>
 
 {% set postslist = collections.posts %}
 {% if postslist | length %}
     {% include "components/postslist.njk" %}
 {% else %}
-    <div>Я пока еще ничего не написал</div>
+    <div>{{ archive[locale].empty }}</div>
 {% endif %}

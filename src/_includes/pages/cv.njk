@@ -1,7 +1,10 @@
 <div class="p-cv">
     {% if cv %}
     <div class="u-flex u-items-center u-justify-between">
-        <h1 class="p-cv_name">{{ cv[locale].name }}</h1>
+        <div class="c-header-back">
+            <h1 class="c-header-back_item">{{ cv[locale].name }}</h1>
+            <div class="c-header-back_rect"></div>
+        </div>
         <a class="p-cv_download c-link" href="{{ "/static/cv_ru_andrey_parfenov.pdf" | url }}">
             {% include "icons/file-download.svg" %}
             pdf
