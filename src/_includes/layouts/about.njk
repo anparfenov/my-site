@@ -30,4 +30,13 @@ templateClass: tmpl-about
             {% endif %}
         {% endfor %}
     </section>
+    <section class="p-about_machine">
+        <h3>My spec 🖥️</h3>
+        <h4><a class="c-simple-link" href={{about[locale].machine.link}}>{{ about[locale].machine.name }}</a></h4>
+        <p class="c-spec-item"><span class="c-spec-item_title">cpu:</span> <span>{{ about[locale].machine.spec.cpu }}</span> </p>
+        <p class="c-spec-item"><span class="c-spec-item_title">ram:</span> <span>{{ about[locale].machine.spec.ram }}</span> </p>
+        <p class="c-spec-item"><span class="c-spec-item_title">gpu:</span> <span>{{ about[locale].machine.spec.gpu }}</span> </p>
+        <p class="c-spec-item"><span class="c-spec-item_title">ssd:</span> <span>{{ about[locale].machine.spec.ssd }}</span> </p>
+        <p class="c-spec-item"><span class="c-spec-item_title">os:</span> <span>{{ about[locale].machine.spec.os }}</span> </p>
+    </section>
 </div>

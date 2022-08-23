@@ -1,5 +1,6 @@
 @use "../components/socials";
 @use "../components/link";
+@use "../components/spec";
 
 .p-about {
     &_title {
@@ -16,5 +17,15 @@
     }
     &_para {
         line-height: 1.8;
+    }
+
+    &_machine {
+        margin-top: 1rem;
+    }
+
+    &_machine-row {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
     }
 }
