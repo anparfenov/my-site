@@ -8,9 +8,9 @@
 }
 
 @mixin content-padding() {
-    padding: 0 1rem;
+    padding: 0 0.5rem;
 
     @include media("laptop") {
-        padding: 0;
+        padding: 0 0.1rem;
     }
 }

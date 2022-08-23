@@ -2,10 +2,13 @@
 @use "../components/routes";
 @use "../components/zoom-word";
 @use "../components/header-back";
-// @use "../components/link";
 @use "../layouts/index-grid";
 
 .p-index {
     padding-top: 1rem;
-    height: 100%;
+    height: auto;
+
+    @media (min-width: 400px) {
+        height: 100%;
+    }
 }

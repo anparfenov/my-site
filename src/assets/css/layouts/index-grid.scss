@@ -1,7 +1,7 @@
 .index-grid {
     display: grid;
     grid-template-areas:
-    "meta pages";
+    "meta" "pages";
 
     justify-content: center;
     align-items: center;
@@ -14,4 +14,10 @@
     &_pages {
         grid-area: pages;
     }
+
+    @media (min-width: 400px) {
+        grid-template-areas:
+            "meta pages";
+    }
 }
+
