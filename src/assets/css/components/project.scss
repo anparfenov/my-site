@@ -2,9 +2,11 @@
 @forward "picture";
 
 .c-project {
+    --border-radius: 0.5rem;
+
     max-width: var(--max-project-width);
     margin: 0 auto;
-    border-radius: 0.5rem;
+    border-radius: var(--border-radius);
     transition: transform 0.5s ease;
     border: 1px solid var(--color-border);
     position: relative;
@@ -29,6 +31,7 @@
     &_link {
         font-weight: 800;
         font-size: var(--text-lg);
+        border-radius: inherit;
     }
 
     &_title {
@@ -63,6 +66,8 @@
         background-color: var(--color-gray-900-90);
         color: var(--color-text-inv);
         max-height: 100%;
+        border-bottom-left-radius: var(--border-radius);
+        border-bottom-right-radius: var(--border-radius);
     }
 
     &_tech-list {
